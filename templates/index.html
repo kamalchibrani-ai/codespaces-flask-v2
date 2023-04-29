@@ -8,11 +8,16 @@
 
 
 <body>
+    {% include 'nav_bar.html' %}
     <div class="container">
         <h1 class="text-center">Open Position</h1>
         {% for job in jobs %}
         {% include 'job_item.html' %}
         {% endfor %}
     </div>
+    <div class="container text-center">
+        <a href="mailto:kchibrani@gmail.com?subject=hi%20this%20is%20subject%20&body=this%20is"role="button" class="btn btn-primary">Contact Us</a>
+    </div>
+    {% include 'footer.html' %}
 </body>
 </html>
