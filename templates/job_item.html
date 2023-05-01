@@ -4,13 +4,13 @@
         <div>
             <h4>{{job['title']}}</h4>
         </div>
-        {% if 'Salary' in job %}
+        {% if 'salary' in job %}
         <div>
-            <b>Salary: </b>{{job['Salary']}}
+            <b>Salary: </b>{{job['salary']}}<b> {{job['currency']}}</b>
         </div>
         {% endif %}
         <div>
-            <p>{{job['Description']}}</p>
+            <p><b>Location: </b>{{job['location']}}</p>
         </div>
     </div>
 
