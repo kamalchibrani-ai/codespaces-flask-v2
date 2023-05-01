@@ -1,7 +1,6 @@
 from flask import Flask, render_template, jsonify
 from database import get_jobs_from_db
 
-
 app = Flask(__name__)
 
 
