@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from database import get_jobs_from_db
+from database import get_jobs_from_db,get_job_by_id
 
 app = Flask(__name__)
 
@@ -14,6 +14,14 @@ def hello_world():
 @app.route("/api/jobs")
 def get_jobs():
     return jsonify(jobs)
+
+@app.route("/job/<job_id>")
+def get_job(job_id):
+    job = get_job_by_id(job_id)
+    if not job:
+        return 'no jobs',404
+    else:
+        return render_template("jobpage.html", job=job)
 
 if __name__ == "__main__":
     app.run(debug=True)

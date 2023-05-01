@@ -25,3 +25,17 @@ def get_jobs_from_db():
         for row in result.all():
             Jobss.append(row._asdict())
     return Jobss
+
+def get_job_by_id(id):
+    Job = None
+    with engine.connect() as connection:
+        result = connection.execute(text("select * from jobs where id = :val"),{"val": id})
+        # print(result)
+        rows = result.all()
+        if len(rows) == 0:
+            return None
+        else:
+            for row in rows:
+                Job = row._asdict()
+                print(Job)
+            return Job

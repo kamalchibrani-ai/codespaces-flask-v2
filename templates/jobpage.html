@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{job.title}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        {% include 'bootstrap.html' %}
+    </head>
+    <body>
+        {% include 'nav_bar.html' %}
+        <div class="container">
+            <div class="card shadow-sm bg-body-tertiary rounded">
+                <h1 class="card-header">{{job.title}}</h1>
+                <div class="card-title">
+                    <b> Location: </b>{{job.location}} <br />
+                    <b> Salary: </b>{{job.salary}} <b>{{job.currency}}</b>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><b>Resposibilities:</b><br />
+                                {% for line in job.resposibilities.split('/n') %}
+                                    <li>{{line}}</li>
+                                {% endfor %}
+                            </p> 
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>Requirements:</b><br />
+                                {% for line in job.requirements.split('/n') %}
+                                <li>{{line}}</li>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    <a href="mailto:kchibrani@gmail.com?subject=Application%20for%20{{job.title}}&body=my%20name%20is%20%3A%0D%0AApplying%20for%20position%20{{job.title}}%0D%0AI%20have%20read%20all%20the%20requirements%20and%20responsibilities%0D%0A%0D%0A" , class="btn btn-primary" , role="button" >apply</a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% include 'footer.html' %}
+    </body>
+</html>
