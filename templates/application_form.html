@@ -1,0 +1,36 @@
+<form id="application" action="/job/{{job['id']}}/apply" enctype="multipart/form-data" method="POST">
+    <div class="row g-3">
+        <div class="col-md-6">
+          <input type="text" name="First_Name" id="name" form="application" class="form-control" placeholder="First name" aria-label="First name">
+        </div>
+        <div class="col-md-6">
+          <input type="text" name="Last_Name" form="application" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="url" name="Linkdin_Link" form="application" class="form-control" placeholder="linkdIn link" aria-label="linkdIn">
+      </div>
+      <div class="col-md-6">
+        <input type="url" name="Github_Link" form="application" class="form-control" placeholder="GitHub Link" aria-label="GitHub">
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="email" name="Email_Id" form="application" class="form-control" placeholder="john@doe.com" aria-label="Email Id">
+      </div>
+      <div class="col-md-6">
+        <input type="file" name="Resume" form="application" class="form-control" placeholder="upload your resume" aria-label="Resume">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <textarea name="About" cols="130" form="application" id="about" rows="10"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+      </div>
+    </div>
+</form>

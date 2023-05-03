@@ -39,3 +39,7 @@ def get_job_by_id(id):
                 Job = row._asdict()
                 print(Job)
             return Job
+        
+def get_applicants_data(id):
+    with engine.connect() as connection:
+        result = connection.execute(text("Insert into applicants values (:val,:First_Name, :Last_Name, :Email_Id, :Linkdin_Url, :Github_Url, : )"),{"val": id})
